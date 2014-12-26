@@ -43,4 +43,14 @@
             android:summaryOff="@string/low_ram_summary_off"
             android:defaultValue="true" />
     </PreferenceCategory>
+
+    <!-- Bluetooth -->
+    <PreferenceCategory android:title="@string/category_bluetooth_title" >
+        <CheckBoxPreference
+            android:key="a2dp_sink"
+            android:title="@string/a2dp_sink_title"
+            android:summaryOn="@string/a2dp_sink_summary_on"
+            android:summaryOff="@string/a2dp_sink_summary_off"
+            android:defaultValue="false" />
+    </PreferenceCategory>
 </PreferenceScreen>

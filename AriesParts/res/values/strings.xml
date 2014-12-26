@@ -47,6 +47,12 @@
     <string name="low_ram_reboot_yes">Yes</string>
     <string name="low_ram_reboot_no">No</string>
 
+    <string name="category_bluetooth_title">Bluetooth</string>
+    <string name="a2dp_sink_title">A2DP Sink</string>
+    <string name="a2dp_sink_summary_on">A2DP Sink is enabled, A2DP Source is disabled</string>
+    <string name="a2dp_sink_summary_off">A2DP Sink is disabled, A2DP Source is enabled</string>
+    <string name="a2dp_sink_error_bt_active">Bluetooth must be deactivated before changing A2DP mode.</string>
+
     <!-- Page TouchKey -->
     <string name="category_touchkey_title">Touch Keys</string>
     <string name="backlight_timeout_title_head">Backlight Timeout</string>

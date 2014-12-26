@@ -44,6 +44,7 @@ public class GeneralFragmentActivity extends PreferenceFragment {
     private Preference mGSensor;
     private CheckBoxPreference mFastCharge;
     private CheckBoxPreference mLowRamStatus;
+    private CheckBoxPreference mA2dpSinkStatus;
     private FileObserver mObserver;
 
     private Handler mHandler = new Handler();
@@ -91,12 +92,17 @@ public class GeneralFragmentActivity extends PreferenceFragment {
         mLowRamStatus = (CheckBoxPreference) findPreference(DeviceSettings.KEY_LOW_RAM);
         mLowRamStatus.setEnabled(LowRam.isSupported());
         mLowRamStatus.setOnPreferenceChangeListener(new LowRam());
+
+        mA2dpSinkStatus = (CheckBoxPreference) findPreference(DeviceSettings.KEY_A2DP_SINK);
+        mA2dpSinkStatus.setEnabled(A2dpSink.isSupported());
+        mA2dpSinkStatus.setOnPreferenceChangeListener(new A2dpSink());
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mLowRamStatus.setChecked(LowRam.getPropertyValue());
+        mA2dpSinkStatus.setChecked(A2dpSink.getPropertyValue());
         mFastCharge.setChecked(FastCharge.isActive());
     }
 
