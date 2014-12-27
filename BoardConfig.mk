@@ -41,6 +41,7 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := scorpion
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_SMP := false
 
 # Use dlmalloc instead of jemalloc for mallocs on low-ram target kernels
 MALLOC_IMPL := dlmalloc
@@ -97,7 +98,6 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 BOARD_EGL_CFG := device/samsung/ariesve/config/egl.cfg
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_DISPLAY_INSECURE_MM_HEAP := true
-TARGET_NO_ADAPTIVE_PLAYBACK := true
 USE_OPENGL_RENDERER := true
 
 # Memory allocation
