@@ -42,6 +42,7 @@ public class GeneralFragmentActivity extends PreferenceFragment {
     private static final String TAG = "DeviceSettings_General";
 
     private Preference mGSensor;
+    private ListPreference mOTGCharge;
     private CheckBoxPreference mFastCharge;
     private CheckBoxPreference mLowRamStatus;
     private CheckBoxPreference mA2dpSinkStatus;
@@ -81,6 +82,10 @@ public class GeneralFragmentActivity extends PreferenceFragment {
         mFastCharge.setEnabled(FastCharge.isSupported());
         mFastCharge.setOnPreferenceChangeListener(new FastCharge(mContext));
 
+        mOTGCharge = (ListPreference) findPreference(DeviceSettings.KEY_OTG_CHARGE);
+        mOTGCharge.setEnabled(OTGCharge.isSupported());
+        mOTGCharge.setOnPreferenceChangeListener(new OTGCharge());
+        
         mObserver = new FileObserver(FastCharge.getFilePath(), FileObserver.MODIFY) {
             @Override
             public void onEvent(int event, String file) {
@@ -110,5 +115,10 @@ public class GeneralFragmentActivity extends PreferenceFragment {
     public void onDestroy() {
         mObserver.stopWatching();
         super.onDestroy();
+    }
+
+    public static void restore(Context context) {
+        //FastCharge.restore(context);
+        OTGCharge.restore(context);
     }
 }
