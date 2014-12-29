@@ -39,8 +39,8 @@ public class A2dpSink implements OnPreferenceChangeListener {
 	private static final String SYSTEM_VERSION_PROP_KEY = "ro.build.version.release";
 	private static final String A2DPSINK_PROP_KEY = "persist.service.bt.a2dp.sink";
 
-	// A2dpSink property is supported starting from Android 4.4 (KitKat)
-	private static final float MIN_VERSION_SUPPORTED = 4.4f;
+	// A2dpSink property is supported starting from Android 5.0 (Lollipop)
+	private static final float MIN_VERSION_SUPPORTED = 5.0f;
 
 	/**
 	 * Checks if the feature is supported
